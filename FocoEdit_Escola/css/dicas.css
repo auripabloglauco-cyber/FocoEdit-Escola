@@ -1,0 +1,55 @@
+/* dicas.css - Estilo da página dicas.html */
+
+@import url("index.css");
+
+/* Cartão da dica de um mentor */
+.dica {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+/* Foto de perfil redonda */
+.dica img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.dica h3 {
+    margin: 8px 0 0;
+}
+
+.area {
+    color: var(--cor);
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Etiquetas dos programas que o editor usa */
+.tag {
+    display: inline-block;
+    background: #ede9ff;
+    color: var(--cor-escura);
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+
+/* Dica que abre e fecha (elemento <details>, sem JavaScript) */
+details {
+    background: var(--fundo);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    text-align: left;
+}
+
+summary {
+    cursor: pointer;
+    color: var(--cor-escura);
+    font-weight: bold;
+}

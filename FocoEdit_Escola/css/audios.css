@@ -1,0 +1,27 @@
+/* audios.css - Estilo da página audios.html */
+
+@import url("index.css");
+
+/* Cada faixa de áudio fica em um cartão com faixa lateral colorida */
+.faixa {
+    background: white;
+    border: 1px solid var(--borda);
+    border-left: 6px solid #0b8272;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.faixa h3 {
+    margin: 0;
+}
+
+.faixa p {
+    margin: 4px 0 12px;
+    color: #5f6673;
+}
+
+/* O player ocupa toda a largura do cartão */
+audio {
+    width: 100%;
+}

@@ -1,0 +1,50 @@
+/* trilhas.css - Estilo da página trilhas.html */
+
+@import url("index.css");
+
+/* Cartão de trilha: cada tipo tem uma cor de borda diferente */
+.trilha {
+    background: white;
+    border: 1px solid var(--borda);
+    border-top: 5px solid var(--cor);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.trilha h3 {
+    margin-top: 0;
+}
+
+.trilha-video {
+    border-top-color: #5b4bdb;
+}
+
+.trilha-foto {
+    border-top-color: #e07a1f;
+}
+
+.trilha-audio {
+    border-top-color: #0b8272;
+}
+
+/* Tabela de valores */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th, td {
+    border: 1px solid var(--borda);
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: var(--cor);
+    color: white;
+}
+
+tr:nth-child(even) td {
+    background: var(--fundo);
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocoEdit - Contato</title>
+    <!-- Cada página HTML usa o seu próprio arquivo CSS, da pasta css -->
+    <link rel="stylesheet" href="../css/contato.css">
+</head>
+<body>
+    <header>
+        <h1>Foco<span>Edit</span></h1>
+        <p>Aprenda a editar vídeo, foto e áudio com quem já edita</p>
+    </header>
+
+    <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="trilhas.html">Trilhas</a>
+            <a href="dicas.html">Dicas</a>
+            <a href="fotos.html">Fotos</a>
+            <a href="audios.html">Áudios</a>
+            <a href="videos.html">Vídeos</a>
+            <a href="cadastro-aluno.html">Quero Aprender</a>
+            <a href="cadastro-mentor.html">Dar Dicas</a>
+            <a href="contato.html" class="ativo">Contato</a>
+    </nav>
+
+    <main>
+        <h2>Fale com a FocoEdit</h2>
+        <p>Tem dúvidas, sugestões de trilha ou encontrou algum problema? Envie uma mensagem.</p>
+
+        <section class="grid">
+            <article class="card">
+                <h3>Informações</h3>
+                <ul>
+                    <li>E-mail: contato@focoedit.exemplo</li>
+                    <li>Atendimento: segunda a sexta, 9h às 18h</li>
+                    <li>Atendimento 100% online</li>
+                </ul>
+            </article>
+
+            <form>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+                <label for="assunto">Assunto:</label>
+                <select id="assunto">
+                    <option>Dúvida</option>
+                    <option>Sugestão de trilha</option>
+                    <option>Problema no site</option>
+                </select>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" placeholder="Escreva sua mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+        <p id="msg" class="sucesso"></p>
+        <p class="aviso">Formulário demonstrativo: a mensagem não é enviada a nenhum servidor.</p>
+    </main>
+
+    <footer>
+        <p>FocoEdit - Projeto acadêmico de Ciência da Computação</p>
+    </footer>
+
+    <script>
+        // Ao enviar: mostra uma confirmação sem recarregar a página
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault();                                  // não recarrega a página
+            var nome = document.getElementById("nome").value;    // lê o campo nome
+            document.getElementById("msg").textContent = "Obrigado, " + nome + "! Sua mensagem foi registrada.";
+            this.reset();                                        // limpa os campos
+        });
+    </script>
+</body>
+</html>

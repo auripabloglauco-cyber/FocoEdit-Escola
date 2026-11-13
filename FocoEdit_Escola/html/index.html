@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocoEdit - Início</title>
+    <!-- Cada página HTML usa o seu próprio arquivo CSS, da pasta css -->
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header>
+        <h1>Foco<span>Edit</span></h1>
+        <p>Aprenda a editar vídeo, foto e áudio com quem já edita</p>
+    </header>
+
+    <nav class="menu">
+            <a href="index.html" class="ativo">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="trilhas.html">Trilhas</a>
+            <a href="dicas.html">Dicas</a>
+            <a href="fotos.html">Fotos</a>
+            <a href="audios.html">Áudios</a>
+            <a href="videos.html">Vídeos</a>
+            <a href="cadastro-aluno.html">Quero Aprender</a>
+            <a href="cadastro-mentor.html">Dar Dicas</a>
+            <a href="contato.html">Contato</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <h2>Aprenda a editar vídeo, foto e áudio</h2>
+            <p>A FocoEdit ajuda quem está começando a editar, com trilhas de estudo, exemplos para treinar e dicas de quem já edita.</p>
+            <p id="ola" class="ola"></p>
+            <a class="botao" href="cadastro-aluno.html">Quero aprender</a>
+            <a class="botao botao-claro" href="cadastro-mentor.html">Quero dar dicas</a>
+        </section>
+
+        <h2>O que você aprende aqui</h2>
+        <section class="grid">
+            <article class="card">
+                <h3>Vídeos</h3>
+                <p>Cortes, transições e ritmo da montagem.</p>
+                <a href="videos.html">Ver aulas</a>
+            </article>
+            <article class="card">
+                <h3>Fotos</h3>
+                <p>Composição, luz e cor.</p>
+                <a href="fotos.html">Ver galeria</a>
+            </article>
+            <article class="card">
+                <h3>Áudios</h3>
+                <p>Graves, médios, agudos e limpeza de som.</p>
+                <a href="audios.html">Ouvir exercícios</a>
+            </article>
+        </section>
+
+        <h2>Como funciona</h2>
+        <ol class="passos">
+            <li>Faça o cadastro como aluno (para aprender) ou como mentor (para dar dicas).</li>
+            <li>O aluno segue as trilhas e treina com exemplos de foto, áudio e vídeo.</li>
+            <li>O mentor compartilha dicas de edição, e todo mundo aprende junto.</li>
+        </ol>
+    </main>
+
+    <footer>
+        <p>FocoEdit - Projeto acadêmico de Ciência da Computação</p>
+    </footer>
+
+    <script>
+        // Se a pessoa já se cadastrou, mostra uma saudação com o nome guardado
+        var nome = localStorage.getItem("nome");
+        if (nome) {
+            document.getElementById("ola").textContent = "Olá, " + nome + "! Continue de onde parou.";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+==================================================
+  PROJETO FINAL: FOCOEDIT (versão Escola)
+  Site para aprender a editar vídeo, foto e áudio
+  HTML e CSS, com um pouco de JavaScript nos formulários
+==================================================
+
+SOBRE O PROJETO
+---------------
+A FocoEdit ajuda quem está começando a editar:
+  - ALUNOS se cadastram para APRENDER, seguindo trilhas e treinando
+    com exemplos de foto, áudio e vídeo;
+  - MENTORES se cadastram para COMPARTILHAR DICAS de edição.
+
+Por isso existem DOIS cadastros diferentes:
+  - cadastro-aluno.html   (tema verde-azulado) -> o que quer aprender,
+    nível atual, horas de estudo por semana e objetivo.
+  - cadastro-mentor.html  (tema roxo)          -> área em que edita,
+    anos de experiência, portfólio, programas e a primeira dica.
+
+O site tem 10 páginas, e todas se ligam pelo menu do topo.
+
+
+ESTRUTURA DE PASTAS
+-------------------
+FocoEdit_Escola/
+|
+|-- LEIA-ME.txt
+|
+|-- html/                      (as 10 páginas)
+|   |-- index.html             1. Início
+|   |-- sobre.html             2. Sobre
+|   |-- trilhas.html           3. Trilhas de aprendizado e tabela
+|   |-- dicas.html             4. Dicas dos mentores (abrem e fecham)
+|   |-- fotos.html             5. Galeria de IMAGENS (aulas de foto)
+|   |-- audios.html            6. Página de ÁUDIO (graves, médios, agudos)
+|   |-- videos.html            7. Página de VÍDEO (fade e corte seco)
+|   |-- cadastro-aluno.html    8. Cadastro de quem quer aprender
+|   |-- cadastro-mentor.html   9. Cadastro de quem dá dicas
+|   `-- contato.html           10. Contato
+|
+|-- css/                       (um CSS para cada página HTML)
+|   |-- index.css              (também é o estilo BASE de todos)
+|   |-- sobre.css
+|   |-- trilhas.css
+|   |-- dicas.css
+|   |-- fotos.css
+|   |-- audios.css
+|   |-- videos.css
+|   |-- cadastro-aluno.css
+|   |-- cadastro-mentor.css
+|   `-- contato.css
+|
+|-- img/     6 imagens de aula e 3 avatares (arquivos .svg)
+|-- audio/   3 áudios: graves, médios e agudos (.wav)
+`-- video/   2 vídeos: transição com fade e corte seco (.mp4)
+
+
+COMO O HTML E O CSS SE LIGAM
+----------------------------
+1) Cada página HTML usa o CSS de mesmo nome, por esta linha no <head>:
+
+       <link rel="stylesheet" href="../css/fotos.css">
+
+   O "../" significa "sair da pasta html e entrar na pasta css".
+
+2) Os CSS se interligam: o index.css guarda o estilo comum a todas as
+   páginas (cores, cabeçalho, menu, cartões, rodapé). Os outros 9
+   arquivos começam com esta linha:
+
+       @import url("index.css");
+
+   Depois dela vem só o que é exclusivo da página.
+
+3) As cores ficam no começo do index.css, em variáveis (:root):
+
+       --cor: #5b4bdb;   (roxo principal)
+
+   O cadastro do aluno troca essa variável no próprio CSS para ficar
+   verde-azulado (#0b8272), e assim se diferencia do cadastro do mentor.
+
+
+O QUE FUNCIONA NO SITE
+----------------------
+- Navegação: o menu leva às 10 páginas e marca a página atual.
+- Dicas (dicas.html): clique em "Ler a dica" para abrir e fechar.
+  Usa a tag <details>, sem JavaScript.
+- Players: os áudios e os vídeos têm botões de play, pausa e volume.
+- Formulários (cadastro-aluno, cadastro-mentor e contato):
+    * os campos obrigatórios e o formato do e-mail são validados;
+    * ao enviar, a página NÃO recarrega: aparece uma mensagem verde de
+      confirmação;
+    * nos dois cadastros, o nome fica guardado no navegador
+      (localStorage) e a página Início passa a mostrar
+      "Olá, <nome>! Continue de onde parou.".
+- Nada é enviado a servidor: os dados ficam só neste navegador.
+  Para apagar o nome guardado: F12 > Application (Aplicativo) >
+  Local Storage > clique com o botão direito > Clear.
+
+O JavaScript é curto e está dentro das páginas, no final do <body>
+(index, cadastro-aluno, cadastro-mentor e contato), com comentários.
+
+O QUE CADA PÁGINA USA (para estudar)
+------------------------------------
+index.html            section, article, ol, links, saudação com JS
+sobre.html            section, article, ul, parágrafos
+trilhas.html          table (tr, th, td), cartões coloridos
+dicas.html            details e summary, img (avatar redondo), span
+fotos.html            figure, figcaption, img, grade (grid), zoom
+audios.html           tag <audio controls>
+videos.html           tag <video controls> com <source>
+cadastro-aluno.html   form, fieldset, radio, select, number, textarea + JS
+cadastro-mentor.html  form, checkbox, url, number, select, textarea + JS
+contato.html          form simples ao lado de um cartão + JS

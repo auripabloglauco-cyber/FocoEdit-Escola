@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocoEdit - Cadastro de Mentor</title>
+    <!-- Cada página HTML usa o seu próprio arquivo CSS, da pasta css -->
+    <link rel="stylesheet" href="../css/cadastro-mentor.css">
+</head>
+<body>
+    <header>
+        <h1>Foco<span>Edit</span></h1>
+        <p>Aprenda a editar vídeo, foto e áudio com quem já edita</p>
+    </header>
+
+    <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="trilhas.html">Trilhas</a>
+            <a href="dicas.html">Dicas</a>
+            <a href="fotos.html">Fotos</a>
+            <a href="audios.html">Áudios</a>
+            <a href="videos.html">Vídeos</a>
+            <a href="cadastro-aluno.html">Quero Aprender</a>
+            <a href="cadastro-mentor.html" class="ativo">Dar Dicas</a>
+            <a href="contato.html">Contato</a>
+    </nav>
+
+    <main>
+        <h2>Cadastro de Mentor</h2>
+        <p class="faixa-tipo">Para quem quer compartilhar dicas de edição</p>
+        <p>Preencha os dados abaixo para ajudar quem está começando.</p>
+
+        <form>
+            <fieldset>
+                <legend>Dados pessoais</legend>
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" minlength="6" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Sua experiência</legend>
+                <label for="area">Área em que você edita:</label>
+                <select id="area">
+                    <option>Edição de vídeo</option>
+                    <option>Edição de fotos</option>
+                    <option>Edição de áudio</option>
+                </select>
+                <label for="anos">Anos de experiência:</label>
+                <input type="number" id="anos" min="0" placeholder="2">
+                <label for="portfolio">Link do seu portfólio ou canal:</label>
+                <input type="url" id="portfolio" placeholder="https://...">
+                <p>Programas que você usa:</p>
+                <label><input type="checkbox"> Premiere</label>
+                <label><input type="checkbox"> DaVinci Resolve</label>
+                <label><input type="checkbox"> Photoshop</label>
+                <label><input type="checkbox"> Audacity</label>
+                <label for="dica">Sua primeira dica:</label>
+                <textarea id="dica" placeholder="Compartilhe uma dica que você gostaria de ter ouvido no começo"></textarea>
+            </fieldset>
+
+            <button type="submit">Criar perfil de mentor</button>
+        </form>
+        <p id="msg" class="sucesso"></p>
+        <p class="aviso">Cadastro demonstrativo: o nome fica guardado só neste navegador, e nenhum dado é enviado a um servidor.</p>
+        <p>Quer apenas aprender? <a href="cadastro-aluno.html">Cadastro de aluno</a>.</p>
+    </main>
+
+    <footer>
+        <p>FocoEdit - Projeto acadêmico de Ciência da Computação</p>
+    </footer>
+
+    <script>
+        // Quando o formulário for enviado (e estiver válido):
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault();                                  // não recarrega a página
+            var nome = document.getElementById("nome").value;    // lê o campo nome
+            localStorage.setItem("nome", nome);                  // guarda o nome no navegador
+            localStorage.setItem("perfil", "mentor");          // guarda o tipo de cadastro
+            document.getElementById("msg").textContent = "Cadastro feito! Bem-vindo(a), " + nome + ".";
+            this.reset();                                        // limpa os campos
+        });
+    </script>
+</body>
+</html>

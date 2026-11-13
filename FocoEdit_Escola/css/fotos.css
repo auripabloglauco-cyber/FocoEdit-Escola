@@ -1,0 +1,44 @@
+/* fotos.css - Estilo da página fotos.html (galeria de imagens) */
+
+@import url("index.css");
+
+/* Galeria: grade de imagens que se ajusta ao tamanho da tela */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.galeria figure {
+    margin: 0;
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.galeria img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s;
+}
+
+/* Efeito de zoom ao passar o mouse */
+.galeria figure:hover img {
+    transform: scale(1.05);
+}
+
+.galeria figcaption {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Explicação curta embaixo do título da legenda */
+.galeria figcaption span {
+    display: block;
+    font-weight: normal;
+    font-size: 13px;
+    color: #5f6673;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocoEdit - Cadastro de Aluno</title>
+    <!-- Cada página HTML usa o seu próprio arquivo CSS, da pasta css -->
+    <link rel="stylesheet" href="../css/cadastro-aluno.css">
+</head>
+<body>
+    <header>
+        <h1>Foco<span>Edit</span></h1>
+        <p>Aprenda a editar vídeo, foto e áudio com quem já edita</p>
+    </header>
+
+    <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="trilhas.html">Trilhas</a>
+            <a href="dicas.html">Dicas</a>
+            <a href="fotos.html">Fotos</a>
+            <a href="audios.html">Áudios</a>
+            <a href="videos.html">Vídeos</a>
+            <a href="cadastro-aluno.html" class="ativo">Quero Aprender</a>
+            <a href="cadastro-mentor.html">Dar Dicas</a>
+            <a href="contato.html">Contato</a>
+    </nav>
+
+    <main>
+        <h2>Cadastro de Aluno</h2>
+        <p class="faixa-tipo">Para quem quer aprender a editar</p>
+        <p>Conte o que você quer aprender e comece pelas trilhas.</p>
+
+        <form>
+            <fieldset>
+                <legend>Seus dados</legend>
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" placeholder="seu@email.com" required>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" minlength="6" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>O que você quer aprender</legend>
+                <p>Área de interesse:</p>
+                <label><input type="radio" name="area" checked> Vídeo</label>
+                <label><input type="radio" name="area"> Foto</label>
+                <label><input type="radio" name="area"> Áudio</label>
+                <label for="nivel">Seu nível hoje:</label>
+                <select id="nivel">
+                    <option>Nunca editei</option>
+                    <option>Já editei um pouco</option>
+                    <option>Edito, mas quero melhorar</option>
+                </select>
+                <label for="horas">Horas de estudo por semana:</label>
+                <input type="number" id="horas" min="1" max="40" placeholder="5">
+                <label for="objetivo">Seu objetivo:</label>
+                <textarea id="objetivo" placeholder="Ex.: editar vídeos para o meu canal"></textarea>
+            </fieldset>
+
+            <label><input type="checkbox" required> Aceito os termos de uso</label>
+            <button type="submit">Criar conta de aluno</button>
+        </form>
+        <p id="msg" class="sucesso"></p>
+        <p class="aviso">Cadastro demonstrativo: o nome fica guardado só neste navegador, e nenhum dado é enviado a um servidor.</p>
+        <p>Quer compartilhar dicas? <a href="cadastro-mentor.html">Cadastro de mentor</a>.</p>
+    </main>
+
+    <footer>
+        <p>FocoEdit - Projeto acadêmico de Ciência da Computação</p>
+    </footer>
+
+    <script>
+        // Quando o formulário for enviado (e estiver válido):
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault();                                  // não recarrega a página
+            var nome = document.getElementById("nome").value;    // lê o campo nome
+            localStorage.setItem("nome", nome);                  // guarda o nome no navegador
+            localStorage.setItem("perfil", "aluno");          // guarda o tipo de cadastro
+            document.getElementById("msg").textContent = "Cadastro feito! Bem-vindo(a), " + nome + ".";
+            this.reset();                                        // limpa os campos
+        });
+    </script>
+</body>
+</html>

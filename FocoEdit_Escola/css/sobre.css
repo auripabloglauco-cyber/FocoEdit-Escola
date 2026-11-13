@@ -1,0 +1,18 @@
+/* sobre.css - Estilo da página sobre.html */
+
+/* Importa o estilo base (cabeçalho, menu, rodapé, cores) */
+@import url("index.css");
+
+/* Cartões de missão e visão com uma faixa colorida em cima */
+.destaque {
+    border-top: 5px solid var(--cor);
+}
+
+.destaque h3 {
+    color: var(--cor-escura);
+}
+
+/* Lista de valores */
+ul li {
+    margin-bottom: 6px;
+}

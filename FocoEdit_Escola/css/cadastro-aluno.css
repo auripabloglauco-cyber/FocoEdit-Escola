@@ -1,0 +1,78 @@
+/* cadastro-aluno.css - Estilo da página cadastro-aluno.html
+   Cadastro do ALUNO (quem quer aprender): tema VERDE-AZULADO (diferente do editor) */
+
+@import url("index.css");
+
+/* Troca a cor principal só nesta página, para diferenciar do cadastro de mentor */
+:root {
+    --cor: #0b8272;
+    --cor-escura: #0a6f62;
+}
+
+/* O cabeçalho também muda de cor nesta página */
+header {
+    background: linear-gradient(135deg, #0b4f47, var(--cor));
+}
+
+/* Faixa que mostra para quem é este cadastro */
+.faixa-tipo {
+    display: inline-block;
+    background: var(--cor);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Formulário */
+form {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+fieldset {
+    background: white;
+    border: 1px solid var(--borda);
+    border-top: 4px solid var(--cor);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0 0 12px;
+}
+
+legend {
+    color: var(--cor-escura);
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 8px;
+    border: 1px solid #aab;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin-right: 6px;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+button {
+    background: var(--cor);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--cor-escura);
+}

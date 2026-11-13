@@ -1,0 +1,210 @@
+/* ==========================================================
+   index.css - Estilo da página index.html (Início)
+   Este arquivo também é a BASE: todos os outros CSS importam ele.
+   ========================================================== */
+
+/* Cores usadas no site inteiro (variáveis). Mude aqui para trocar o tema. */
+:root {
+    --cor: #5b4bdb;          /* cor principal (roxo) */
+    --cor-escura: #3d2fb0;   /* versão mais escura da cor principal */
+    --fundo: #f5f6fb;        /* fundo da página */
+    --texto: #1f2430;        /* cor do texto */
+    --borda: #dcdfea;        /* cor das bordas */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    background: var(--fundo);
+    line-height: 1.6;
+}
+
+/* ----- Cabeçalho ----- */
+header {
+    background: linear-gradient(135deg, #1f1b4d, var(--cor));
+    color: white;
+    text-align: center;
+    padding: 24px 16px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header h1 span {
+    color: #ffb36b;
+}
+
+header p {
+    margin: 4px 0 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ----- Menu de navegação ----- */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    background: white;
+    padding: 8px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.menu a {
+    color: var(--texto);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.menu a:hover {
+    background: var(--fundo);
+    color: var(--cor);
+}
+
+/* Link da página atual */
+.menu a.ativo {
+    background: var(--cor);
+    color: white;
+}
+
+/* ----- Conteúdo principal ----- */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+h2 {
+    color: var(--cor-escura);
+}
+
+a {
+    color: var(--cor);
+}
+
+/* ----- Blocos reutilizáveis ----- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 16px 0;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+.botao {
+    display: inline-block;
+    background: var(--cor);
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    margin: 4px 4px 4px 0;
+}
+
+.botao:hover {
+    background: var(--cor-escura);
+}
+
+.aviso {
+    color: #5f6673;
+    font-size: 13px;
+}
+
+/* Mensagem de sucesso dos formulários (some sozinha quando está vazia) */
+.sucesso {
+    background: #e5f4e4;
+    border-left: 5px solid #2e9b63;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-weight: bold;
+}
+
+.sucesso:empty {
+    display: none;
+}
+
+/* ----- Rodapé ----- */
+footer {
+    background: #1f1b4d;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-size: 13px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* ==========================================================
+   Parte exclusiva da página Início
+   ========================================================== */
+.hero {
+    background: white;
+    border: 1px solid var(--borda);
+    border-left: 6px solid var(--cor);
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.hero h2 {
+    margin-top: 0;
+    font-size: 26px;
+}
+
+/* Saudação com o nome de quem já se cadastrou (vazia = escondida) */
+.ola {
+    color: var(--cor-escura);
+    font-weight: bold;
+}
+
+.ola:empty {
+    display: none;
+}
+
+/* Botão com fundo claro (segunda opção do hero) */
+.botao-claro {
+    background: #ede9ff;
+    color: var(--cor-escura);
+}
+
+.botao-claro:hover {
+    background: #d9d2ff;
+}
+
+.passos li {
+    margin-bottom: 8px;
+}
+
+/* ----- Telas pequenas (celular) ----- */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 26px;
+    }
+
+    .menu a {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+}

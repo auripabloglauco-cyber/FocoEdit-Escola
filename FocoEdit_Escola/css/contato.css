@@ -1,0 +1,46 @@
+/* contato.css - Estilo da página contato.html */
+
+@import url("index.css");
+
+/* Formulário de contato */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input, select, textarea {
+    padding: 8px;
+    border: 1px solid #aab;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+}
+
+textarea {
+    min-height: 100px;
+}
+
+button {
+    background: var(--cor);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--cor-escura);
+}
+
+/* Lista de informações sem as bolinhas */
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
